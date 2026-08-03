@@ -1,0 +1,9 @@
+path: D:\develop\football\ultralytics-main\datasets\football
+train: images/train
+val: images/val
+names:
+  0: goalkeeper
+  1: crossbar
+  2: post_left
+  3: post_right
+  4: ball
