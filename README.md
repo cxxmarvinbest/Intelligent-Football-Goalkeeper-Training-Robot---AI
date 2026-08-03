@@ -36,4 +36,4 @@ All reverse serve landing points correspond to 16 grid divisions of the goal, wi
 8.`test_trajectory_qt` includes videos used for testing  
 9.`trajectory_qt.py`: Show qt interface and test  
 10.`11m_position.py`:Its HTTP protocol is available for front-end use  
-![AI智能模式界面](https://github.com/username/repository/blob/main/images/example.png)
+![AI智能模式界面](https://github.com/cxxmarvinbest/repository/blob/main/images/example.png)
