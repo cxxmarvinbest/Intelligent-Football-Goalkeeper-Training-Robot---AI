@@ -3,6 +3,7 @@
 This project is an **intelligent football goalkeeper training penalty kick robot** based on artificial intelligence visual recognition technology and precision motor control system.  
 The equipment is fixed and deployed in the center of the penalty spot (**11 meters**), facing the goal; The system divides the goal area into **3 × 6 = 18** grid training areas. All serve parameters, manual, and AI intelligent serve are based on 18 divisions to realize landing point control, and comprehensively simulate shots from all angles and high and low positions of the goal. Training the goalkeeper's ability to fight.  
 AI is the core intelligent capability of the equipment. Based on the goalkeeper's real-time position, it automatically adapts to the serve strategy and manually adjusts parameters to realize fully automatic intelligent confrontation training, which greatly improves the professionalism and actual combat of training.  
+The system is based on the YOLO visual detection model, tracks the goalkeeper's position in real time through the RTSP camera, and combines the triple safety mechanism determination to automatically trigger the serve 5 seconds after the safe passage. The ball server communicates and controls through the RS485 serial port (JSON protocol).  
 ##   Mode
 ### AI follow serve
 The system recognizes the goalkeeper's position in real time, automatically matches the goal corresponding to 18 sub-areas, follows the personnel's position to dynamically serve the landing point, and always sends the ball to the goalkeeper's controllable training area to ensure the continuity of training and avoid empty balls and invalid serves. The height of the ball (**low, medium, high**).  
@@ -35,7 +36,8 @@ All reverse serve landing points correspond to 16 grid divisions of the goal, wi
 7.Generative model:`train/best.pt`  
 8.`test_trajectory_qt` includes videos used for testing  
 9.`trajectory_qt.py`: Show qt interface and test  
-![qt界面展示](https://github.com/cxxmarvinbest/Intelligent-Football-Goalkeeper-Training-Robot---AI/blob/main/qt_interface_demo.png）  
+![qt界面展示](https://github.com/cxxmarvinbest/Intelligent-Football-Goalkeeper-Training-Robot---AI/blob/main/qt_interface_demo.png)    
 10.`11m_position.py`:Its HTTP protocol is available for front-end use  
 ![AI智能模式界面](https://github.com/cxxmarvinbest/Intelligent-Football-Goalkeeper-Training-Robot---AI/blob/main/AI%E6%99%BA%E8%83%BD%E6%A8%A1%E5%BC%8F%E7%95%8C%E9%9D%A2.jpg)  
+11.All interfaces: `POST/open`, `POST/start`, `POST/resume`, `POST/stop`, `POST/close`, `POST/params`, `GET/frames`, `GET/status`
 
