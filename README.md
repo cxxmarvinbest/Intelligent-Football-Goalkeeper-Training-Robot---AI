@@ -35,6 +35,7 @@ All reverse serve landing points correspond to 16 grid divisions of the goal, wi
 7.Generative model:`train/best.pt`  
 8.`test_trajectory_qt` includes videos used for testing  
 9.`trajectory_qt.py`: Show qt interface and test  
+![qt界面展示](https://github.com/cxxmarvinbest/Intelligent-Football-Goalkeeper-Training-Robot---AI/blob/main/qt_interface_demo.png）  
 10.`11m_position.py`:Its HTTP protocol is available for front-end use  
 ![AI智能模式界面](https://github.com/cxxmarvinbest/Intelligent-Football-Goalkeeper-Training-Robot---AI/blob/main/AI%E6%99%BA%E8%83%BD%E6%A8%A1%E5%BC%8F%E7%95%8C%E9%9D%A2.jpg)  
 
