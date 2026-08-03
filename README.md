@@ -30,4 +30,10 @@ All reverse serve landing points correspond to 16 grid divisions of the goal, wi
 2.Use `extract.ipynb` to split videos into individual images based on a specified number of frames  
 3.Use **MakeSense** to annotate the image, dividing it into `0 goalkeeper`, `1 crossbar`, `2 post_left`, `3 post_right`, `4 ball`  
 4.Split the `images` and `Annotation` into `train` and `val`, and place them into `datasets`  
-4.`test_trajectory_qt` includes videos used for testing  
+5.Configure and specify the paths of the dataset and category information `football.yaml`  
+6.Train model:`yolov8-train.py`  
+7.Generative model:`train/best.pt`  
+8.`test_trajectory_qt` includes videos used for testing  
+9.`trajectory_qt.py`: Show qt interface and test  
+10.`11m_position.py`:Its HTTP protocol is available for front-end use  
+![AI智能模式界面](https://github.com/username/repository/blob/main/images/example.png)
