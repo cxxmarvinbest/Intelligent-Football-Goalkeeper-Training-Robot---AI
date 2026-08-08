@@ -39,5 +39,9 @@ All reverse serve landing points correspond to 16 grid divisions of the goal, wi
 ![qt界面展示](https://github.com/cxxmarvinbest/Intelligent-Football-Goalkeeper-Training-Robot---AI/blob/main/qt_interface_demo.png)    
 10.`11m_position.py`:Its HTTP protocol is available for front-end use  
 ![AI智能模式界面](https://github.com/cxxmarvinbest/Intelligent-Football-Goalkeeper-Training-Robot---AI/blob/main/AI%E6%99%BA%E8%83%BD%E6%A8%A1%E5%BC%8F%E7%95%8C%E9%9D%A2.jpg)  
-11.All interfaces: `POST/open`, `POST/start`, `POST/resume`, `POST/stop`, `POST/close`, `POST/params`, `GET/frames`, `GET/status`
+11.All interfaces: `POST/open`, `POST/start`, `POST/resume`, `POST/stop`, `POST/close`, `POST/params`, `GET/frames`, `GET/status`  
+12.`11m_position.py` includes full functionality.
+## Deploy to RK3588
+1.Install remote control tool **nomachine** and file transfer tool **WinSCP**  
+2.Split the file `11m_position.py` into several sub-threads `http_api.py`, `mqtt.py`, `test_mpp_player.py`, `yolov8_detection.py`, `main.py`   
 
