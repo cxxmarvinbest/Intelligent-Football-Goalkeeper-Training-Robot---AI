@@ -44,5 +44,8 @@ All reverse serve landing points correspond to 16 grid divisions of the goal, wi
 ## Deploy to RK3588
 1.Install remote control tool **nomachine** and file transfer tool **WinSCP**  
 2.Split the file `11m_position.py` into several sub-threads `http_api.py`, `mqtt.py`, `test_mpp_player.py`, `yolov8_detection.py`, `main.py`   
-3.Profile: `device_protoclo.json` and `algo_params.yaml`  
+3.Profile: `device_protocol.json` and `algo_params.yaml`    
 4.`scripts` contains a boot-on self-boot configuration file  
+5.`test_mpp_player.py` has realized MPP hardware decoding  
+6.`device_protocol.json` contains all the parameters of the server, `zone_mapping` should be replaced by real experimental data among them  
+7.`algo_params.yaml` contains all the parameters of the algorithm  
