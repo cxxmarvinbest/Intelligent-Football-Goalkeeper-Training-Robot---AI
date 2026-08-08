@@ -1,0 +1,111 @@
+{
+  "_comment": "足球AI智能训练 — 发球机通信协议配置",
+
+  "device": {
+    "name": "发球机",
+    "subscribe_topic": "/SS/FB/DMT/001/SubTopic1",
+    "publish_topic": "/SS/FB/DMT/001/PubTopic1"
+  },
+
+  "commands": {
+    "start_motor": {
+      "PID": 26,
+      "MDF": { "STATE": "work" }
+    },
+    "pause_motor": {
+      "PID": 26,
+      "MDF": { "STATE": "paus" }
+    },
+    "stop_motor": {
+      "PID": 26,
+      "MDF": { "STATE": "stop" }
+    },
+    "cancel_serve": {
+      "PID": 26,
+      "MDF": { "SCANC": 0 }
+    },
+    "query_status": {
+      "PID": 1425,
+      "REQ": ["STATE", "ALERT", "SBCNT", "BSTAT", "RUNTM"]
+    },
+    "query_version": {
+      "PID": 1425,
+      "REQ": ["HARVR", "SOFVR"]
+    },
+    "set_heartbeat": {
+      "PID": 1026,
+      "MDF": { "HBINT": 60 }
+    }
+  },
+
+  "serve": {
+    "pid_base": 10226,
+    "wheel_speed": {
+      "min": 20,
+      "max": 100,
+      "default": 50
+    },
+    "h_angle": {
+      "min": 0,
+      "max": 60,
+      "default": 30
+    },
+    "v_angle": {
+      "min": 0,
+      "max": 60,
+      "default": 30
+    }
+  },
+
+  "zone_mapping": {
+    "grid": {
+      "rows": 3,
+      "cols": 6
+    },
+    "sdata": [
+      [[50, 50, 50, 10, 45], [50, 50, 50, 18, 45], [50, 50, 50, 26, 45], [50, 50, 50, 34, 45], [50, 50, 50, 42, 45], [50, 50, 50, 50, 45]],
+      [[50, 50, 50, 10, 35], [50, 50, 50, 18, 35], [50, 50, 50, 26, 35], [50, 50, 50, 34, 35], [50, 50, 50, 42, 35], [50, 50, 50, 50, 35]],
+      [[50, 50, 50, 10, 25], [50, 50, 50, 18, 25], [50, 50, 50, 26, 25], [50, 50, 50, 34, 25], [50, 50, 50, 42, 25], [50, 50, 50, 50, 25]]
+    ]
+  },
+
+  "serve_params": {
+    "default_wheel_speed": 50,
+    "serve_interval_min": 3,
+    "serve_interval_max": 10,
+    "serve_count_min": 1,
+    "serve_count_max": 999,
+    "duration_min": 1,
+    "duration_max": 9999
+  },
+
+  "mqtt": {
+    "broker_host": "192.168.8.75",
+    "broker_port": 18883,
+    "username": "admin",
+    "password": "mqtt@123",
+    "client_id": "mqttx_62f7dbf1_11m",
+    "topic_tx": "/SS/FB/DMT/001/AI/TX",
+    "topic_rx": "/SS/FB/DMT/001/AI/RX"
+  },
+
+  "http": {
+    "host": "192.168.8.75",
+    "port": 8068
+  },
+
+  "report_pids": {
+    "serve_complete": 27,
+    "heartbeat": 26,
+    "fault": 58,
+    "response": 0
+  },
+
+  "alert_codes": {
+    "0": "正常",
+    "1": "卡球",
+    "2": "电机过温",
+    "3": "通信超时",
+    "4": "电量不足"
+  }
+}
