@@ -1,0 +1,46 @@
+[Unit]
+Description=足球AI智能训练系统 (11米点位)
+Documentation=https://github.com/siboasi/football-ai
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=60
+StartLimitBurst=3
+
+[Service]
+Type=simple
+User=ztl
+Group=ztl
+
+# ── 工作目录 (所有 .py / .yaml / .json 所在位置) ──
+WorkingDirectory=/home/ztl/code
+
+# ── Python 环境 ──
+# 默认使用系统 Python3，如有 conda/venv 请修改为对应路径。
+ExecStart=/usr/bin/python3 /home/ztl/code/main.py
+
+# ── 环境变量 ──
+# MPP 硬件解码库路径 (systemd 不展开 $VAR，必须写死)
+Environment=PYTHONPATH=/home/ztl/code/mpp
+# RKNN 依赖库路径
+Environment=LD_LIBRARY_PATH=/usr/lib:/usr/local/lib
+# Python 用户主目录 (matplotlib 等库需要)
+Environment=HOME=/home/ztl
+# 实时输出日志 (不缓冲，journalctl 立即可见)
+Environment=PYTHONUNBUFFERED=1
+
+# ── 崩溃自动重启 ──
+Restart=always
+RestartSec=5
+
+# ── 日志 ──
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=football_ai
+
+# ── 优雅停止: 先 SIGTERM, 10秒后 SIGKILL ──
+KillMode=mixed
+KillSignal=SIGTERM
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target
